@@ -1,0 +1,4 @@
+export enum MESSAGE_TYPES {
+  // 修改当前页面的置灰样式
+  CHANGE_MY_CONTENT_GRAY = 'CHANGE_MY_CONTENT_GRAY'
+}

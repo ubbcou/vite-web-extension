@@ -1,11 +1,28 @@
-# Vue 3 + Typescript + Vite
+<h1 align="center">
+  <samp>浏览器插件示例</samp>
+</h1>
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+<p align="center">
+  <samp>由 vite + ts 驱动的浏览器插件示例</samp>
+</p>
 
-## Recommended IDE Setup
+## 特性
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+- ⚡️[Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite)
+- 🎨[Windi CSS](https://github.com/windicss/windicss)
+- 💪TypeScript
 
-## Type Support For `.vue` Imports in TS
+## 预设内容
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+### UI 框架
+
+- [tailwindcss](https://github.com/tailwindlabs/tailwindcss)
+
+### 开发工具
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [pnpm](https://pnpm.js.org/)
+
+## 开发时遇到的问题
+
+- content/background 脚本更新后，需要 `chrome.runtime.reload()` 重载插件
