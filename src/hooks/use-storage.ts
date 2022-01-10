@@ -1,11 +1,11 @@
-import { ref, readonly, Ref, toRef, computed } from "vue";
+import { ref, readonly, Ref, toRef, computed, toRaw, unref } from "vue";
 
 type Cache = Ref<Record<string, unknown>>
 
 const cache = ref({}) as Cache;
 
 export enum CACHE_KEYS {
-  GRAY_LIST = 'GrayList',
+  CONFIGURE = 'CONFIG_RESULT',
 };
 
 export function useStorage() {
@@ -15,7 +15,6 @@ export function useStorage() {
     try {
       const items = await getAllStorageSyncData()
       cache.value = Object.assign({}, cache.value, items);
-      console.log('syncCache', cache.value)
     } catch (error) {
       console.error(error)
     }
@@ -24,8 +23,9 @@ export function useStorage() {
   function setItem(key: CACHE_KEYS, value: unknown): Promise<void> {
     return new Promise((resolve) => {
       chrome.storage.sync.set({ [key]: value }, () => {
-        resolve()
-        syncCache()
+        syncCache().then(() => {
+          resolve()
+        })
       })
     })
   }
@@ -41,8 +41,9 @@ export function useStorage() {
   function removeItem(key: CACHE_KEYS | CACHE_KEYS[]): Promise<void> {
     return new Promise((resolve) => {
       chrome.storage.sync.remove(key, () => {
-        resolve()
-        syncCache()
+        syncCache().then(() => {
+          resolve()
+        })
       })
     })
   }

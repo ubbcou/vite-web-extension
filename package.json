@@ -1,7 +1,8 @@
 {
-  "name": "web-extension",
-  "description": "web extension sample.",
+  "name": "vite-web-extension",
+  "description": "通过 vite 创建浏览器插件的快速模板",
   "version": "0.0.0",
+  "public": true,
   "scripts": {
     "dev": "run-p dev:*",
     "dev:web": "vue-tsc --noEmit && vite build --watch --mode=development",
@@ -13,7 +14,9 @@
     "build:watch": "vue-tsc --noEmit && vite build --watch"
   },
   "dependencies": {
+    "@types/lodash-es": "^4.17.5",
     "@vueuse/core": "^7.4.1",
+    "lodash-es": "^4.17.21",
     "vue": "^3.2.25"
   },
   "devDependencies": {

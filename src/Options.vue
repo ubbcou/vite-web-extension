@@ -10,7 +10,7 @@ watch(cache, (val) => {
 
 <template>
   <div>
-    <button @click="() => setItem(CACHE_KEYS.GRAY_LIST, [Date.now()])">Hello</button>
-    <pre>{{ cache }}</pre>
+    <!-- <button @click="() => setItem(CACHE_KEYS.GRAY_LIST, [Date.now()])">Hello</button> -->
+    <!-- <pre>{{ cache }}</pre> -->
   </div>
 </template>

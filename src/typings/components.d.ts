@@ -4,7 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    ICanGray: typeof import('./components/ICanGray.vue')['default']
+    ICanGray: typeof import('../components/ICanGray.vue')['default']
   }
 }
 

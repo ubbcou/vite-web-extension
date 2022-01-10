@@ -42,6 +42,8 @@ function getManifest(): Manifest.WebExtensionManifest {
     host_permissions: [
       "http://*/",
       "https://*/",
+      "chrome://",
+      "edge://",
     ],
     permissions: [
       'tabs',
